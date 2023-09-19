@@ -41,5 +41,5 @@ def main():
             play_again = input("Play again? (yes/no): ").strip.lower()
             if play_again != "yes":
                 break
-    if __name__ == "__main__":
+if __name__ == "__main__":
         main()

@@ -53,6 +53,6 @@ def get_prediction():
                 if play_again != "yes":
                     break
                 
-                if __name__ == "__main__":
-                    play()
+if __name__ == "__main__":
+    play()
                 
