@@ -12,6 +12,7 @@ while True:
     normalized_image = (image_np.astype(np.float32) / 127.0) - 1 # Normalize the image
     data[0] = normalized_image
     prediction = model.predict(data)
+    prediction_class = np.argmax(prediction)
     cv2.imshow('frame', frame)
     # Press q to close the window
     print(prediction)
