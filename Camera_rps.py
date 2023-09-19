@@ -12,7 +12,7 @@ def get_prediction():
     data = np.ndarray(shape=(1,224,224,3), dtype=np.float32)
     
     countdown_start = time.time() # Record the start time
-    countdown_duration = 3 # Set the countdown duration in seconds
+    countdown_duration = 8 # Set the countdown duration in seconds
     while True:
         ret, frame = cap.read()
         resized_frame = cv2.resize(frame, (224,224),interpolation = cv2.INTER_AREA)
@@ -54,5 +54,5 @@ def get_prediction():
                     break
                 
 if __name__ == "__main__":
-    play()
+    get_prediction()
                 
