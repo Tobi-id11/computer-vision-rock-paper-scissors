@@ -21,13 +21,13 @@ def get_prediction():
         data[0] = normalized_image
         prediction = model.predict(data)
         cv2.imshow('frame',frame)
-        
+        predicted_class = np.argmax(prediction)
         # Calculate the time elapsed since the countdown started
         elapsed_time = time.time() - countdown_start
         
         #Return the class with the highest probability (index of max element)
         if elapsed_time >= countdown_duration:
-            predicted_class = np.argmax(prediction)
+            
             break # Move the break statement inside this block
         #Print the remaining time of the countdown
         remaining_time = int(countdown_duration - elapsed_time)
