@@ -35,24 +35,39 @@ def get_prediction():
         
         cap.release()
         cv2.destroyAllWindows()
-        
+        return predicted_class
         #Function to get the user's choice
-        def play():
-            print("Welcome to Rock-Paper-Scissors!")
-            while True:
-                computer_choice = get_prediction()
-                user_choice = get_user_choice()
-                
-                print(f"Computer chose: {computer_choice}")
-                print(f"You chose:{user_choice}")
-                
-                result = get_winner(computer_choice, user_choice)
-                print(result)
-                
-                play_again = input("Play again? (yes/no): ").strip().lower()
-                if play_again != "yes":
-                    break
+def get_user_choice():
+    while True:
+        user_choice = input("Enter your choice(Rock/Paper/Scissors): ")
+        if user_choice in ["Rock","Paper","Scissors"]:
+            return user_choice
+        else:
+            print("Invalid choice. Please choose from Rock, Paper, or Scissors")
+            
+#Function to determine the winner based on the game logic 
+def get_winner(computer_choice, user_choice):
+    # Implement your game logic here
+    # This function should return a string indicating the result of the game
+    # For example, "Computer wins!", "You win!", "It's a tie!"
+    pass
+
+def play():
+    print("Welcome to Rock-Paper-Scissors!")
+    while True:
+        computer_choice = get_prediction()
+        user_choice = get_user_choice()
+        
+        print(f"Computer chose: {computer_choice}")
+        print(f"You chose:{user_choice}")
+        
+        result = get_winner(computer_choice, user_choice)
+        print(result)
+        
+        play_again = input("Play again? (yes/no): ").strip().lower()
+        if play_again != "yes":
+            break
                 
 if __name__ == "__main__":
-    get_prediction()
+    play()
                 
